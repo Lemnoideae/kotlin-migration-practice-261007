@@ -15,6 +15,13 @@ fun main() {
 
     val person = Person("Alice")
     person.greet()
+
+    val names = mutableListOf("Alice", "Bob", "Charlie")
+    names.add("David")
+
+    for (name in names) {
+        println("name : $name")
+    }
 }
 
 fun add(a: Int, b: Int): Int {
