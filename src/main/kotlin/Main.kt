@@ -29,6 +29,9 @@ fun main() {
     for ((key, value) in ages) {
         println("$key is $value years old.")
     }
+
+    val name: String? = null
+    println(name?.length ?: "Name is null")
 }
 
 fun add(a: Int, b: Int): Int {
