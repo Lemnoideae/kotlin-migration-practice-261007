@@ -13,7 +13,7 @@ fun main() {
     val result = add(5, 10)
     println(result)
 
-    val person = Person("Alice")
+    val person = Person("Bob", 16)
     person.greet()
 
     val names = mutableListOf("Alice", "Bob", "Charlie")
@@ -30,18 +30,36 @@ fun main() {
         println("$key is $value years old.")
     }
 
-    val name: String? = null
-    println(name?.length ?: "Name is null")
+    val name1: String = "John"
+    val name2: String? = null
+    println("name1 length: ${name1.length}")
+    println(name2?.length ?: "name2 is null")
+
+    val names2 = listOf("Alice", "Bob", "Charlie")
+
+    names2.forEach { name -> println("name : $name") }
+    names2.forEach { println("name : $it") }
+
+    val p1 = Person("Alice", 29)
+    val p2 = Person("Bob", 30)
+
+    println(p1) // == p1.toString()
+    println(p1 == p2) // == p1.equals(p2)
 }
 
 fun add(a: Int, b: Int): Int {
     return a + b
 }
 
-class Person(
-    val name: String
+data class Person(
+    val name: String,
+    val age: Int
 ) {
     fun greet() {
         println("Hello, my name is $name")
+    }
+
+    fun sayOwnAge() {
+        println("I am $age years old.")
     }
 }
