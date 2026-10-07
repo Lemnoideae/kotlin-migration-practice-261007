@@ -1,5 +1,8 @@
 package com.programmers.be14
 
+import java.nio.file.Files
+import java.nio.file.Paths
+
 fun main() {
     val message = "Kotlin!"
     println("hello $message")
@@ -56,6 +59,30 @@ fun main() {
     val squaredIntList = intList.square()
     println("=====================================")
     squaredIntList.forEach(::println)
+
+    sayHello()
+    sayHello("KJJ")
+
+    val singleA = Singleton
+    println(singleA.showMessage())
+    val singleB = Singleton
+    println(singleB.showMessage())
+    println(singleA == singleB)
+
+    val notSingleA = NotSingleton()
+    println(notSingleA.showMessage())
+    val notSingleB = NotSingleton()
+    println(notSingleB.showMessage())
+    println(notSingleA == notSingleB)
+
+    val day = 3
+    val dayName = when(day) {
+        1 -> "Monday"
+        2 -> "Tuesday"
+        3 -> "Wednesday"
+        else -> "Invalid Value"
+    }
+    println(dayName)
 }
 
 fun add(a: Int, b: Int): Int {
@@ -82,4 +109,20 @@ fun String.greet() {
 fun List<Int>.square(): List<Int> {
     val rst = this.map {it * it}
     return rst
+}
+
+fun sayHello(name: String = "KJC") {
+    println("Hello, $name")
+}
+
+object Singleton {
+    fun showMessage() {
+        println("This is a singleton object.")
+    }
+}
+
+class NotSingleton {
+    fun showMessage() {
+        println("This is not a singleton object.")
+    }
 }
