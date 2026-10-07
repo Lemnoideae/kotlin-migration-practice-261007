@@ -7,6 +7,8 @@ fun main() {
     message = "Kotlin!"
     println("hello ${message}")
 
-    val str = if(number % 2 == 0) "Even" else "Odd"
-    println(str)
+    for(i in 0 until 10) {
+        println("num : ${i}")
+        if(i % 2 == 0) "Even" else "Odd"
+    }
 }
