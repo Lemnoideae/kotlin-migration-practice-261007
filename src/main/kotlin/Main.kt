@@ -37,7 +37,7 @@ fun main() {
 
     val names2 = listOf("Alice", "Bob", "Charlie")
 
-    names2.forEach { name -> println("name : $name") }
+    names2.forEach ({ name -> println("name : $name") })
     names2.forEach { println("name : $it") }
 
     val p1 = Person("Alice", 29)
@@ -45,6 +45,17 @@ fun main() {
 
     println(p1) // == p1.toString()
     println(p1 == p2) // == p1.equals(p2)
+
+    val name3: String = "Alice"
+    name3.greet()
+
+    val intList = listOf(1,2,3,4,5)
+    val rst = intList.square()
+    println(rst)
+
+    val squaredIntList = intList.square()
+    println("=====================================")
+    squaredIntList.forEach(::println)
 }
 
 fun add(a: Int, b: Int): Int {
@@ -62,4 +73,13 @@ data class Person(
     fun sayOwnAge() {
         println("I am $age years old.")
     }
+}
+
+fun String.greet() {
+    println("hello, $this ~!")
+}
+
+fun List<Int>.square(): List<Int> {
+    val rst = this.map {it * it}
+    return rst
 }
