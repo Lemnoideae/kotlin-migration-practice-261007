@@ -83,6 +83,10 @@ fun main() {
         else -> "Invalid Value"
     }
     println(dayName)
+
+    val numbers2 = listOf(1,2,3,4,5,6)
+    val rst_number2 = numbers2.filter { it % 2 == 0}
+    for (n in rst_number2) { println(n) }
 }
 
 fun add(a: Int, b: Int): Int {
